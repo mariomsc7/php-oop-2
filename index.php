@@ -7,18 +7,6 @@
     <title>Shop</title>
 </head>
 <body>
-    <main>
 
-    <!-- CLIENTI -->
-    <section>
-        <h2>Clienti:</h2>
-    </section>
-
-    <!-- PRODOTTI -->
-    <section>
-        <h2>Prodotti: </h2>
-    </section>
-
-    </main>
 </body>
 </html>
