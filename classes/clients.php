@@ -30,48 +30,42 @@ class Client {
 
 // CLASSE FIGLIA
 class Premium extends Client {
-    private $premium;
+    public $premium;
 
-    function __construct($_name, $_lastname, $_email, $premium = 'undefined') {
+    function __construct($_name, $_lastname, $_email, $premium='undefined') {
         parent::__construct($_name, $_lastname, $_email);
 
         $this->premium = $premium;
     }
 
     public function setPremium() {
-        echo $this->hasPremium();
-    }
-
-    private function hasPremium() {
-        if($this->getAge() >= 18 || $this->getAge() <=30) {
-            $premium = true;
-        } else {
-            $premium = false;
-        }
+        return $this->premium = $this->getAge() < 25 ? 'Premium' : 'Basic';
     }
 } 
 
-$client1 = new Client('Mario', 'Rossi', 'mariorossi@gmail.com',);
+$client1 = new Premium('Mario', 'Rossi', 'mariorossi@gmail.com');
 echo 'Nome: ' . $client1->name . '<br>';
 echo 'Cognome: ' . $client1->lastname . '<br>';
 echo 'Email: ' . $client1->email . '<br>';
 $client1->getAge();
+echo $client1->setPremium();
 
 
 
-$client2 = new Client('Marco', 'Gialli', 'marcogialli@gmail.com');
+$client2 = new Premium('Marco', 'Gialli', 'marcogialli@gmail.com');
 echo 'Nome: ' . $client2->name . '<br>';
 echo 'Cognome: ' . $client2->lastname . '<br>';
 echo 'Email: ' . $client2->email . '<br>';
 $client2->getAge();
+echo $client2->setPremium();
 
 
-
-$client3 = new Client('Matteo', 'Verdi', 'matteoverdi@gmail.com');
+$client3 = new Premium('Matteo', 'Verdi', 'matteoverdi@gmail.com');
 echo 'Nome: ' . $client3->name . '<br>';
 echo 'Cognome: ' . $client3->lastname . '<br>';
 echo 'Email: ' . $client3->email . '<br>';
 $client3->getAge();
+echo $client3->setPremium();
 
 var_dump($client1);
 var_dump($client2);
